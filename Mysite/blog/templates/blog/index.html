@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/monyet.png"%}" alt="Jake - The Author Of This Blog" />
+            <h2>WILDLIFE BLOG</h2>
+        </header>
+        <p>Hi, Welcome to Wildlife blog.</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>Latest Post</h2>
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+
+    </section>
+
+    <section id="about">
+        <h2>What should we Do?</h2>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis auctor quam, ac consequat lacus feugiat eget. Cras justo libero, euismod id metus quis, iaculis iaculis urna.
+        </p>
+
+    </section>
+{% endblock %}
+
